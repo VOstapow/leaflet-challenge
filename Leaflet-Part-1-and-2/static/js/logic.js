@@ -76,8 +76,8 @@ function createFeatures(earthquakeData, plateData) {
   var plates = L.geoJSON(plateData, {
     style: function (feature) {
       return {
-        color: "orange",
-        weight: 1
+        color: "violet",
+        weight: 3
       };
     }
   });
@@ -87,11 +87,6 @@ function createFeatures(earthquakeData, plateData) {
 }
 
 function createMap(earthquakes, plates) {
-
-  var outdoorsMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', {
-    attribution: 'Tiles &copy; Esri &mdash; Source: US National Park Service',
-    maxZoom: 18
-  });
 
   var satelliteMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
@@ -113,7 +108,7 @@ function createMap(earthquakes, plates) {
   // Create overlay object to hold our overlay layer
   var overlayMaps = {
     'Earthquakes': earthquakes,
-    'Plate boundaries': plates
+    'Tectonic Plates': plates
   };
 
   // Create our map, giving it the satellite and earthquakes layers to display on load
