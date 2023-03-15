@@ -25,6 +25,7 @@ Complete the following steps:
 	2.	Your data markers should reflect the magnitude of the earthquake by their size and the depth of the earthquake by color. 
 		Earthquakes with higher magnitudes should appear larger, and earthquakes with greater depth should appear darker in color.
 		***Hint:*** The depth of the earth can be found as the third coordinate for each earthquake.
+		<img src="https://github.com/VOstapow/leaflet-challenge/blob/main/Leaflet-Part-1-and-2/Images/marker.jpg" width="200" />
 	3.	Include popups that provide additional information about the earthquake when its associated marker is clicked.
 	4.  Create a legend that will provide context for your map data.
 
