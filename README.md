@@ -39,7 +39,7 @@ Data on tectonic plates can be found at [https://github.com/fraxen/tectonicplate
 
 <img src="https://github.com/VOstapow/leaflet-challenge/blob/main/Leaflet-Part-1-and-2/Images/satellite.jpg" width="800" />
 
-<img src="https://github.com/VOstapow/leaflet-challenge/blob/main/Leaflet-Part-1-and-2/Images/grayscale.jpg" width="800" />
+<img src="https://github.com/VOstapow/leaflet-challenge/blob/main/Leaflet-Part-1-and-2/Images/gray.jpg" width="800" />
 
 
 
