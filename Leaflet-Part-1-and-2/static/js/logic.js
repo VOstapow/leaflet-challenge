@@ -12,27 +12,29 @@ var plateQueryUrl = "https://raw.githubusercontent.com/fraxen/tectonicplates/mas
 // http://colorbrewer2.org/#type=diverging&scheme=RdYlGn&n=
 // ['#ca0020','#fc8d59','#fee08b','#d9ef8b','#91cf60','#1a9850']
 
-function getColor(d) {
+var giveColor = ['#1a9850','#91cf60','#d9ef8b','#fee08b','#fc8d59','#ca0020']
 
+function getColor(d) {
+ 
   let color = '';
-  if (d < 1) {
+  if (d < 10) {
     color = '#1a9850';
-  } else if (d < 2) {
+  } else if (d < 30) {
     color = '#91cf60';
-  } else if (d < 3) {
+  } else if (d < 50) {
     color = '#d9ef8b';
-  } else if (d < 4) {
+  } else if (d < 70) {
     color = '#fee08b';
-  } else if (d < 5) {
+  } else if (d < 90) {
     color = '#fc8d59';
-  } else { // magnitude 5+
+  } else { // depth 90+
     color = '#ca0020';
   }
   return color
 }
 
 function getRadius(d) {
-  // The radius in L.circle is in the unit of meters
+  // The radius in L.circle is in the unit of meters, so we need to make it larger
   return 35000 * d;
 }
 
@@ -55,8 +57,8 @@ function createFeatures(earthquakeData, plateData) {
   var earthquakes = L.geoJSON(earthquakeData, {
     pointToLayer: function (feature, latlng) {
 
-      // magnitude determines the color
-      var color = getColor(feature.properties.mag);
+      // Depth determines the color
+      var colora = getColor(feature.geometry.coordinates[2]);
 
       // Add circles to map
       return L.circle(latlng, {
@@ -64,11 +66,10 @@ function createFeatures(earthquakeData, plateData) {
         opacity: 0.75,
         fillOpacity: 0.90,
         color: "#455a64",
-        fillColor: color,
-        // Adjust radius
+        fillColor: colora,
+        // Adjust radius by magnitude
         radius: getRadius(feature.properties.mag)
-      }).bindPopup("<h4> Magnitude: " + feature.properties.mag + "<br>Location:  " + feature.properties.place +
-        "</h4><hr><p>" + new Date(feature.properties.time) + "</p>");
+      }).bindPopup("<h4> Magnitude: " + feature.properties.mag + "<br>Location:  " + feature.properties.place + "<br>Depth:  " + feature.geometry.coordinates[2] + "</p>");
     } // end pointToLayer
 
   });
@@ -127,13 +128,13 @@ function createMap(earthquakes, plates) {
   legend.onAdd = function (map) {
 
     var div = L.DomUtil.create('div', 'info legend');
-    var magnitudes = [0, 1, 2, 3, 4, 5];
-    var labels = ['0-1', '1-2', '2-3', '3-4', '4-5', '5+'];
+    var depths = [0, 1, 2, 3, 4, 5];
+    var labels = ['-10-10', '10-30', '30-50', '50-70', '70-90', '90+'];
 
-    // loop through our magnitude intervals and generate a label with a colored square for each interval
-    for (var i = 0; i < magnitudes.length; i++) {
+    // loop through our depth intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < depths.length; i++) {
       div.innerHTML +=
-        '<i style="background:' + getColor(magnitudes[i]) + '"></i> ' + labels[i] + '<br>';
+        '<i style="background:' + giveColor[i] + '"></i> ' + labels[i] + '<br>';
     }
     return div;
   }; // end legend.onAdd

@@ -17,14 +17,14 @@ Your first task is to visualize an earthquake dataset.
 Complete the following steps:
 1.	Get your dataset. To do so, follow these steps:
 	1. The USGS provides earthquake data in a number of different formats, updated every five minutes. 
-	2. 	Visit the [GeoJSON](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) page and choose a dataset to visualize.
+	2. 	Visit the [USGS GeoJSON Feed](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) page and choose a dataset to visualize.
 	3.	When you click a dataset (such as "All Earthquakes from the Past 7 Days"), you will be given a JSON representation of that data. 
 	4.	Use the URL of this JSON to pull in the data for the visualization. 
 2.	Import and visualize the data by doing the following:
 	1.	Using Leaflet, create a map that plots all the earthquakes from your dataset based on their longitude and latitude.
 	2.	Your data markers should reflect the magnitude of the earthquake by their size and the depth of the earthquake by color. 
 		Earthquakes with higher magnitudes should appear larger, and earthquakes with greater depth should appear darker in color.
-		Hint: The depth of the earth can be found as the third coordinate for each earthquake.
+		***Hint:*** The depth of the earth can be found as the third coordinate for each earthquake.
 	3.	Include popups that provide additional information about the earthquake when its associated marker is clicked.
 	4.  Create a legend that will provide context for your map data.
 
@@ -32,12 +32,12 @@ Complete the following steps:
 
 Plot a second dataset on your map to illustrate the relationship between tectonic plates and seismic activity. 
 You will need to pull in this dataset and visualize it alongside your original data. 
-Data on tectonic plates can be found at [Plates](https://github.com/fraxen/tectonicplates)
+Data on tectonic plates can be found at [https://github.com/fraxen/tectonicplates](https://github.com/fraxen/tectonicplates)
 
 
 ## Screenshots
 
-<img src="https://github.com/VOstapow/leaflet-challenge/blob/main/Leaflet-Part-1-and-2/Images/Satellite.jpg" width="800" />
+<img src="https://github.com/VOstapow/leaflet-challenge/blob/main/Leaflet-Part-1-and-2/Images/Satellite1.jpg" width="800" />
 <img src="https://github.com/VOstapow/leaflet-challenge/blob/main/Leaflet-Part-1-and-2/Images/GrayScale.jpg" width="800" />
 
 
