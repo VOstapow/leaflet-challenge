@@ -1,5 +1,5 @@
 # Earthquake Visualization
-<img src="https://www.geojs.io/img/logo.png" width="800" />
+<img src="https://www.geojs.io/img/logo.png" width="200" />
 
 ## Background
 
@@ -37,8 +37,9 @@ Data on tectonic plates can be found at [https://github.com/fraxen/tectonicplate
 
 ## Screenshots
 
-<img src="https://github.com/VOstapow/leaflet-challenge/blob/main/Leaflet-Part-1-and-2/Images/Satellite1.jpg" width="800" />
-<img src="https://github.com/VOstapow/leaflet-challenge/blob/main/Leaflet-Part-1-and-2/Images/GrayScale.jpg" width="800" />
+<img src="https://github.com/VOstapow/leaflet-challenge/blob/main/Leaflet-Part-1-and-2/Images/satellite.jpg" width="800" />
+
+<img src="https://github.com/VOstapow/leaflet-challenge/blob/main/Leaflet-Part-1-and-2/Images/grayscale.jpg" width="800" />
 
 
 
